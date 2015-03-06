@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Da</title> >
+    <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+	<%= image_tag("logo.jpg", :alt => "Blog", :class => "round") %>	
+	<nav class="round">
+	  <ul>
+	    <li><%= link_to "Home", '#' %></li>
+	    <li><%= link_to "Weather", '#' %></li>
+	    <li><%= link_to "Posts", '/posts' %></li>
+	    <li><%= link_to "Help", '#' %></li>
+	    <li><%= link_to "Sign in", '#' %></li>
+	</nav>
+      </header>
+      <section class="round">
+	<%= yield %>
+      </section>
+      <footer>
+	<nav class="round">
+	  <ul>
+	    <li><%= link_to "About", '#' %></li>
+	    <li><%= link_to "Contact", '#' %></li>
+	    <li><%= link_to "News", '#' %></li>
+	  </ul>
+	</nav>
+      </footer>
+    </div>
+  </body>
+</html>
