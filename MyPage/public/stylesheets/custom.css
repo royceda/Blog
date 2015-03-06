@@ -112,3 +112,8 @@ footer {
 footer nav {
     float: none;
 }
+
+
+div.field, div.actions {
+    margin-button: 10px;
+}
