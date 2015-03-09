@@ -63,10 +63,12 @@
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-    </nav>  
-    <section class="jumbotron">
-      <%= image_tag("logo.jpg", :alt => "Blog", :class => "round") %>	
-      <%= yield %>
-    </section>
-  </body>
+    </nav>
+    <%= image_tag("logo.jpg", :alt => "Blog") %>	    
+	<section class="jumbotron">
+	  <%= yield %>
+	  
+	</section>
+	
+</body>
 </html>
