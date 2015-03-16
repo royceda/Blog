@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'pages/Contact'
 
+  get 'weather/Local'
+
   root to: "pages#Home"
   resources :posts
 
