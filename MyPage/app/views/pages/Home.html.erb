@@ -1,9 +1,15 @@
-<h1>My Blog</h1>
+<h1>Da Life</h1>
 
+
+  <%= image_tag("Da.jpg") %>
+<p>  Welcome </p>
 
 <p>
-  this is the Home Page
-<a href="www.googlecode.com">Code</a>
+  
+  <h2><span class = "label label-default">Sign in</span></h2>
+  <h2><span class = "label label-warning">
+      <%= link_to "Sign Up Now !", '/users/new', :class => "signup_button round" %> 
+    </span>
+  </h2>
 </p>
 
-<%= link_to "Sign Up Now !", '/users/new', :class => "signup_button round" %>
