@@ -1,6 +1,6 @@
 require  'json'
 
-module Weather
+
   class Condition
     
     attr_reader :code
@@ -21,5 +21,5 @@ module Weather
     end
 
   end
-end
+
 

@@ -1,6 +1,6 @@
 require  'json'
 
-module Weather
+
   class Units
 
     FAHRENHEIT = 'f'
@@ -22,5 +22,5 @@ module Weather
 
     end
   end
-end
+
 

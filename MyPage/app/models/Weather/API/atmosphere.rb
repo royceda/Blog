@@ -1,7 +1,7 @@
 require  'json'
 
 
-module Weather
+
   class Atmosphere
     
     attr_reader :humidity
@@ -21,5 +21,5 @@ module Weather
 
     end
   end
-end
+
 

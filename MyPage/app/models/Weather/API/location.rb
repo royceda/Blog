@@ -1,6 +1,6 @@
 require  'json'
 
-module Weather
+
   class Location
     
     attr_reader :city
@@ -18,5 +18,5 @@ module Weather
       #      puts @sunrise;
     end
   end
-end
+
 

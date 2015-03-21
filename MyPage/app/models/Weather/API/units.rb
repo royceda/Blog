@@ -1,9 +1,8 @@
-module Weather
   class Units
     FAHRENHEIT = 'f'
     CELSIUS   = 'c'
 
-   
+    
     attr_reader :temperature
     attr_reader :distance
     attr_reader :pressure
@@ -16,4 +15,4 @@ module Weather
       @speed       = query[:results][:channel][:units][:speed]
     end
   end
-end
+

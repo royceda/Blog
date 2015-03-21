@@ -3,6 +3,14 @@
 <p>
   <strong>Woeid:</strong>
   <%= @weather.woeid %>
+  <% query = @weather.lookup(580778) %>
+  <strong>Astronomy</strong>
+  sunrise: <%= @weather.Astronomy(query).sunrise %>
+  sunset: <%= @weather.Astronomy(query).sunset %>
+</p>
+
+<p>
+  <%= @weather.meteo(@weather.woeid) %>
 </p>
 
 <%= link_to 'Edit', edit_weather_path(@weather) %> |

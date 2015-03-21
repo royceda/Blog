@@ -2,7 +2,7 @@ require  'json'
 
 #The query is in a Map
 
-module Weather
+
   class Astronomy
     
     attr_reader :sunrise
@@ -20,5 +20,5 @@ module Weather
     end
 
   end
-end
+
 
