@@ -1,9 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Woeid:</strong>
-  <%= @weather.woeid %>
-  <% query = @weather.lookup(580778) %>
+   <% query = @weather.lookup(580778) %>
   <strong>Astronomy</strong>
   sunrise: <%= @weather.Astronomy(query).sunrise %>
   sunset: <%= @weather.Astronomy(query).sunset %>
@@ -12,12 +10,50 @@
 
 <p>  
   <%= @weather.Location(query).city %>,<%= @weather.Location(query).country %> 
+  (woeid: <%= @weather.woeid %>)
+</p>
+<p>
   <%= @weather.Condition(query).date %> 
   <%= @weather.Astronomy(query).sunrise %> 
   <%= @weather.Astronomy(query).sunset %> 
+
+
   <%= @weather.Condition(query).temp %> 
-  <%= @weather.Condition(query).text %> 
+  <%= @weather.Condition(query).code %> 
+  <% code = @weather.Condition(query).code %> 
 </p>
+<p> 
+  <% case code %>
+  <% when 0..4 %>
+  <%= %>tempetes
+  <% when 32 %>
+  <%= %> soleil
+  <% when 26..28 %>
+  <%= %> nuage
+  <% when 36 %>
+  <%= %>chaud
+  <% when 29..30 %>
+  <%= %>un peu de nuage
+  <% when 41..43 %>
+  <%= %>neige
+  <% when 15..16 %>
+  <%= %>neige
+  <% when 1 %>
+  <%= %>
+  <% when 1 %>
+  <%= %>
+  <% when 1 %>
+  <%= %>
+  <% when 1 %>
+  <%= %>
+  
+  
+
+  <% else %>
+  <%= %>
+  <% end %>
+</p>
+
 <p>
   <%= link_to 'Edit', edit_weather_path(@weather) %> |
   <%= link_to 'Back', weathers_path %>
