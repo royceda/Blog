@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-   <% query = @weather.lookup(580778) %>
+  <!-- <%= image_tag "sun.png" %> -->
+  <% query = @weather.lookup(580778) %>
   <strong>Astronomy</strong>
   sunrise: <%= @weather.Astronomy(query).sunrise %>
   sunset: <%= @weather.Astronomy(query).sunset %>
@@ -27,6 +28,7 @@
   <% when 0..4 %>
   <%= %>tempetes
   <% when 32 %>
+  <%= image_tag "png/sun79.png" %>
   <%= %> soleil
   <% when 26..28 %>
   <%= %> nuage
