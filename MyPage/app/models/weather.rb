@@ -28,13 +28,25 @@ class Weather < ActiveRecord::Base
     response
   end
 
-
+  def Forecast query, i
+    f = Weather::Forecast.new query, i;
+    f
+  end
+  
   def Astronomy query
     as = Astronomy.new  query
     as
   end
 
+  def Location query
+    lo = Location.new query
+    lo
+  end
 
+  def Condition query
+    cond = Condition.new query
+    cond
+  end
 
 
 
