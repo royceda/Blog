@@ -2,7 +2,7 @@
 
 <p>
   <!-- <%= image_tag "sun.png" %> -->
-  <% query = @weather.lookup(580778) %>
+  <% query = @weather.lookup(@weather.woeid) %>
   <strong>Astronomy</strong>
   sunrise: <%= @weather.Astronomy(query).sunrise %>
   sunset: <%= @weather.Astronomy(query).sunset %>
@@ -13,48 +13,38 @@
   <%= @weather.Location(query).city %>,<%= @weather.Location(query).country %> 
   (woeid: <%= @weather.woeid %>)
 </p>
+<strong>  <%= @weather.Condition(query).date %><strong> 
 <p>
-  <%= @weather.Condition(query).date %> 
-  <%= @weather.Astronomy(query).sunrise %> 
-  <%= @weather.Astronomy(query).sunset %> 
-
-
-  <%= @weather.Condition(query).temp %> 
-  <%= @weather.Condition(query).code %> 
-  <% code = @weather.Condition(query).code %> 
+  <%= image_tag "png/warm.png" %>
+  <%= @weather.Condition(query).temp %> C
+  
 </p>
 <p> 
+  <% code = @weather.Condition(query).code.to_i %> 
+ 
   <% case code %>
   <% when 0..4 %>
-  <%= %>tempetes
+  <%= image_tag "png/winds4.png" %>
   <% when 32 %>
   <%= image_tag "png/sun79.png" %>
-  <%= %> soleil
   <% when 26..28 %>
-  <%= %> nuage
+  <%= image_tag "png/cloudy.png" %>
   <% when 36 %>
-  <%= %>chaud
+  <%= image_tag "png/summer9.png" %>
   <% when 29..30 %>
-  <%= %>un peu de nuage
+  <%= image_tag "png/cloudy19.png" %>
   <% when 41..43 %>
-  <%= %>neige
+  <%= image_tag "png/snowflake49.png" %>
   <% when 15..16 %>
-  <%= %>neige
-  <% when 1 %>
+  <%= image_tag "png/snowing9.png" %>
   <%= %>
-  <% when 1 %>
-  <%= %>
-  <% when 1 %>
-  <%= %>
-  <% when 1 %>
-  <%= %>
-  
-  
-
   <% else %>
   <%= %>
   <% end %>
 </p>
+
+<p><%= @weather.Condition(query).text %></p>
+
 
 <p>
   <%= link_to 'Edit', edit_weather_path(@weather) %> |
