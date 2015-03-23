@@ -9,52 +9,40 @@
   sunset: <%= @weather.Astronomy(query).sunset %>
 </p>
 
-<p>
-  <%= @weather.meteo(@weather.woeid) %>
-</p>
 
+<p>  
+  <%= @weather.Location(query).city %>,<%= @weather.Location(query).country %> 
+  <%= @weather.Condition(query).date %> 
+  <%= @weather.Astronomy(query).sunrise %> 
+  <%= @weather.Astronomy(query).sunset %> 
+  <%= @weather.Condition(query).temp %> 
+  <%= @weather.Condition(query).text %> 
+</p>
 <p>
   <%= link_to 'Edit', edit_weather_path(@weather) %> |
   <%= link_to 'Back', weathers_path %>
 </p>
+
 
 <h2>Forecast</h2>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>City</th>
       <th>Date</th>
-      <th>Sunrise</th>
-      <th>Sunset</th>
       <th>Temperature (Celsius)</th>
       <th>Condition</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><%= @weather.Location(query).city %>,<%= @weather.Location(query).region %></td>
-      <td><%= @weather.Condition(query).date %></td>
-      <td><%= @weather.Astronomy(query).sunrise %></td>
-      <td><%= @weather.Astronomy(query).sunset %></td>
-      <td><%= @weather.Condition(query).temp %></td>
-      <td><%= @weather.Condition(query).text %></td>
-    </tr>   
-  </tbody>
   <% for i in 0..4 %>
   <% f = @weather.Forecast query, i %>
   <tr>
-    <td></td>
     <td><%= f.day %> <%= f.date %></td>
-    <td></td>
-    <td></td>
     <td>From <%= f.low %> to <%= f.high %></td>
     <td><%= f.text %></td>
-
-    
   </tr>
   <% end %>
-
-
+  </tbody>
 </table>
 
