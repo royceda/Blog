@@ -43,11 +43,19 @@
       <small><%= time_ago_in_words post.created_at %> ago</small>
     </blockquote>
     
+    <p><%= link_to 'Comment', '#' %></p>
+    
     <p>
-      <%= link_to 'Show', post %> 
       <%= link_to 'Edit', edit_post_path(post) %> 
+      |
       <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> 
     </p>
   </div>
 </div>
 <% end %>
+
+<% @posts.comments.each do |comment| %>
+
+<% end %>
+
+
