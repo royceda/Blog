@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Tasks</h1>
+<h1>ToDo Listing</h1>
 
 <table class="table table-striped">
   <thead>
@@ -15,11 +15,9 @@
     <% @tasks.each do |task| %>
       <tr>
 	<td><%= link_to 'X', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
         <td><%= task.text %></td>
         <td><%# link_to 'Show', task %></td> 
         <td><%= link_to ' Edit', edit_task_path(task) %></td>
-
       </tr>
     <% end %>
   </tbody>

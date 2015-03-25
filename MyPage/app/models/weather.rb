@@ -12,6 +12,7 @@ load 'map.rb'
 class Weather < ActiveRecord::Base
   ROOT = "http://query.yahooapis.com/v1/public/yql"
 
+
   def meteo id
     query = lookup(id, Units::CELSIUS)
     a  = Atmosphere.new query;
