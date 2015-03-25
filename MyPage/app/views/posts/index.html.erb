@@ -2,7 +2,7 @@
 
 <h1>Listing Posts</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -14,14 +14,15 @@
 
   <tbody>
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.autor %></td>
-        <td><%= post.text %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.autor %></td>
+      <td><%= post.text %></td>
+      <td><%= time_ago_in_words post.created_at %> ago</td>
+      <td><%= link_to 'Show', post %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
@@ -29,3 +30,24 @@
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+
+<% @posts.each do |post| %>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= link_to post.title, post %></h3>
+  </div>
+  <div class="panel-body">
+    <blockquote>
+      <p><%= post.text %></p>
+      <small>By <%= post.autor %></small>
+      <small><%= time_ago_in_words post.created_at %> ago</small>
+    </blockquote>
+    
+    <p>
+      <%= link_to 'Show', post %> 
+      <%= link_to 'Edit', edit_post_path(post) %> 
+      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> 
+    </p>
+  </div>
+</div>
+<% end %>

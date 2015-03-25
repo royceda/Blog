@@ -15,7 +15,8 @@
     <% @tasks.each do |task| %>
       <tr>
 	<td><%= link_to 'X', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= task.text %></td>
+        <td><strong><%= task.text %></strong></td>
+	<td><%= time_ago_in_words task.created_at %> ago</td>
         <td><%# link_to 'Show', task %></td> 
         <td><%= link_to ' Edit', edit_task_path(task) %></td>
       </tr>
