@@ -19,7 +19,7 @@
 
 
 <h3>Comments</h3>
-<% @comments.each do |comment| %>
+<% #@comments.each do |comment| %>
   <div>
     <strong><%= comment.user_name %></strong>
     <br />
@@ -31,6 +31,9 @@
 
 
 
-
+<% if post.user_id == current_user.id %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
+
+
 <%= link_to 'Back', posts_path %> 
