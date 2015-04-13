@@ -25,6 +25,7 @@ class WeathersController < ApplicationController
   # POST /weathers.json
   def create
     @weather = Weather.new(weather_params)
+    @weather.user_id = current_user.id
 
     respond_to do |format|
       if @weather.save

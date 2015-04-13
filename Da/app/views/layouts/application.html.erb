@@ -89,8 +89,19 @@
 	  </ul>
 	    
 	  <ul class="nav navbar-nav navbar-right">
-  	    <li><%= link_to "Sign in", '/users/new' %></li>
+
+
+	    <% if user_signed_in? %>
+	      <li><%= link_to current_user.email, edit_user_registration_path, :class => 'navbar-link' %> |</li>
+<li>  <%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'navbar-link'  %></li>
+<% else %>
+<li>  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |</li>
+<li>  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+<% end %>
+
 	    <li><%= link_to "Help", '#' %></li>
+	  
+
 	  </ul>
 	  
 	  
@@ -108,17 +119,7 @@
 	    <p class="alert alert-danger"><%= alert %></p>
 	  <% end %>
 
-<p class="navbar-text pull-right">
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'navbar-link'  %>
- <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> 
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
-	  
+
 	  <%= yield %>
 	  
 	</section>

@@ -13,6 +13,7 @@
 
   <tbody>
     <% @tasks.each do |task| %>
+      <% if task.user_id == current_user.id %>
       <tr>
 	<td><%= link_to 'X', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><strong><%= task.text %></strong></td>
@@ -20,6 +21,7 @@
         <td><%# link_to 'Show', task %></td> 
         <td><%= link_to ' Edit', edit_task_path(task) %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

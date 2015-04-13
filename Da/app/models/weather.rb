@@ -9,7 +9,10 @@ load 'Weather/API/wind.rb'
 
 load 'map.rb'
 
+
 class Weather < ActiveRecord::Base
+  belongs_to :user
+
   ROOT = "http://query.yahooapis.com/v1/public/yql"
 
 
