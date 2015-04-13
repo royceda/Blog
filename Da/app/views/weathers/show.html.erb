@@ -1,0 +1,118 @@
+<p id="notice"><%= notice %></p>
+<% query = @weather.lookup(@weather.woeid) %>
+
+
+<p>  
+  <%= @weather.Location(query).city %>,<%= @weather.Location(query).country %> 
+  (woeid: <%= @weather.woeid %>)
+</p>
+<strong>  <%= @weather.Condition(query).date %><strong> 
+
+
+    <p>
+      <%= image_tag "png/warm.png" %>
+      <%= @weather.Condition(query).temp %> C
+    </p>
+    <p> 
+      <% code = @weather.Condition(query).code.to_i %> 
+      
+      <% case code %>
+      <% when 0..4 %>
+      <%= image_tag "png/winds4.png" %>
+      <% when 5..6 %>
+      <%= image_tag "png/cloud377.png" %>  
+      <% when 10..12 %>
+      <%= image_tag "png/rain53.png" %>
+      <% when 13..14 %>
+      <%= image_tag "png/snowflae149.png" %>
+      <% when 15..16 %>
+      <%= image_tag "png/snowing9.png" %>
+      <% when 20 %>
+      <%= image_tag "png/foggy5.png" %>
+      <% when 24 %>
+      <%= image_tag "windy9.png" %>
+      <% when 26..28 %>
+      <%= image_tag "png/cloud363.png" %>
+      <% when 29..30 %>
+      <%= image_tag "png/cloudy19.png" %>
+      <% when 32 %>
+      <%= image_tag "png/sun79.png" %>
+      <% when 36 %>
+      <%= image_tag "png/summer9.png" %>
+      <% when 37..40 %>
+      <%= image_tag "png/winds4.png" %>
+      <% when 41..43 %>
+      <%= image_tag "png/snowflake49.png" %>
+      <% else %>
+      
+      <% end %>      
+
+      <%= @weather.Condition(query).text %>
+    </p>
+
+
+    <p>
+      <%= link_to 'Edit', edit_weather_path(@weather) %> |
+      <%= link_to 'Back', weathers_path %>
+    </p>
+
+    <h2>Forecast</h2>
+
+    <table class="table table-striped">
+      <thead>
+	<tr>
+	  <th>Date</th>
+	  <th>Temperature (Celsius)</th>
+	  <th>Condition</th>
+	</tr>
+      </thead>
+      <tbody>
+	<% for i in 0..4 %>
+	<% f = @weather.Forecast query, i %>
+	<tr>
+	  <td><%= f.day %> <%= f.date %></td>
+	  <td>From <%= f.low %> to <%= f.high %></td>
+	  <td>
+	    <% code = f.code.to_i %> 
+	    
+	    <% case code %>
+	    <% when 0..4 %>
+	    <%= image_tag "png/winds4.png" %>
+	    <% when 5..6 %>
+	    <%= image_tag "png/cloud377.png" %>  
+	    <% when 10..12 %>
+	    <%= image_tag "png/rain53.png" %>
+	    <% when 13..14 %>
+	    <%= image_tag "png/snowflae149.png" %>
+	    <% when 15..16 %>
+	    <%= image_tag "png/snowing9.png" %>
+	    <% when 20 %>
+	    <%= image_tag "png/foggy5.png" %>
+	    <% when 24 %>
+	    <%= image_tag "windy9.png" %>
+	    <% when 26..28 %>
+	    <%= image_tag "png/cloud363.png" %>
+	    <% when 29..30 %>
+	    <%= image_tag "png/cloudy19.png" %>
+	    <% when 32 %>
+	    <%= image_tag "png/sun79.png" %>
+	    <% when 36 %>
+	    <%= image_tag "png/summer9.png" %>
+	    <% when 37..40 %>
+	    <%= image_tag "png/winds4.png" %>
+	    <% when 41..43 %>
+	    <%= image_tag "png/snowflake49.png" %>
+	    <% else %>
+	    <%= f.text %>
+	    <% end %>      
+	  </td>
+	</tr>
+	<% end %>
+      </tbody>
+    </table>
+
+
+
+    <p><%= image_tag "png/sunrise4.png" %></p>
+    <p> sunrise: <%= @weather.Astronomy(query).sunrise %></p>
+    <p> sunset: <%= @weather.Astronomy(query).sunset %></p>
