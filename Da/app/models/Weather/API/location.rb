@@ -1,6 +1,4 @@
 require  'json'
-require 'map'
-
 load 'map.rb'
 
 
@@ -14,6 +12,7 @@ class Location
   end
   
   def initialize(query)
+   
     @city    = query[:results][:channel][:location][:city];
     @country = query[:results][:channel][:location][:country]; 
     @region  = query[:results][:channel][:location][:region];

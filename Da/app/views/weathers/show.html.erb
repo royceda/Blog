@@ -1,7 +1,11 @@
-<p id="notice"><%= notice %></p>
+
 <% query = @weather.lookup(@weather.woeid) %>
 
 
+<% if query.nil? %>
+  <strong> ERROR!!</strong>
+<% else %>
+<p id="notice"><%= notice %></p>
 <p>  
   <%= @weather.Location(query).city %>,<%= @weather.Location(query).country %> 
   (woeid: <%= @weather.woeid %>)
@@ -108,6 +112,7 @@
 	  </td>
 	</tr>
 	<% end %>
+
       </tbody>
     </table>
 
@@ -116,3 +121,4 @@
     <p><%= image_tag "png/sunrise4.png" %></p>
     <p> sunrise: <%= @weather.Astronomy(query).sunrise %></p>
     <p> sunset: <%= @weather.Astronomy(query).sunset %></p>
+<% end %>
