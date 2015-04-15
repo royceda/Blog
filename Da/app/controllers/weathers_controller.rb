@@ -25,7 +25,6 @@ class WeathersController < ApplicationController
   # POST /weathers.json
   def create
     @weather = Weather.new(weather_params)
-    @weather.user_id = current_user.id
 
     respond_to do |format|
       if @weather.save
@@ -70,6 +69,6 @@ class WeathersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def weather_params
-      params.require(:weather).permit(:string)
+      params.require(:weather).permit(:city, :country)
     end
 end

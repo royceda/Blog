@@ -17,7 +17,6 @@ class Weather < ActiveRecord::Base
  
   ROOT = "http://query.yahooapis.com/v1/public/yql"
 
-
   def meteo id
     query = lookup(id, Units::CELSIUS)
     a  = Atmosphere.new query;
@@ -33,7 +32,6 @@ class Weather < ActiveRecord::Base
     end
    response
   end
-
 
   def Forecast query, i
     f = Weather::Forecast.new query, i;
@@ -55,32 +53,27 @@ class Weather < ActiveRecord::Base
     cond
   end
 
-
-
   def lookup(woeid, unit = Units::CELSIUS)
     acceptable_units = [Units::CELSIUS, Units::FAHRENHEIT]
     unit = Units::CELSIUS unless acceptable_units.include?(unit)
-    #url = ROOT + "?q=select%20*%20from%20weather.forecast%20"
-    #url += "where%20woeid%3D'#{woeid}'%20and%20u%3D'#{unit}'&format=json"
-   
-
     url = ROOT + "?q=select%20*%20from%20weather.forecast%20"
     url += "where%20woeid%3D#{woeid}%20and%20u%3D'#{unit}'&format=json"
 
-
+   # url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%3D580778%20and%20u%3D%27c%27&format=json"
     doc = get_response url
-    
+    puts url 
+    puts "woeid #{woeid} "
     doc
-    #response = Response.new woeid, url, doc
   end
 
-
-
-
-
-
-
-
+  def lookup(city, country)
+    url = ROOT+"?q=select%20*%20from%20geo.places%20where%20text%3D'#{city}%20#{country}'&format=json"
+    doc = get_response url
+    woeid = doc[:results][:place][0][:woeid].to_s
+    lookup(woeid)
+    woeid
+  end
+  
   private
   def get_response url
     begin

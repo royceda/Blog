@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414082751) do
+ActiveRecord::Schema.define(version: 20150415075211) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "user_name"
@@ -57,10 +57,10 @@ ActiveRecord::Schema.define(version: 20150414082751) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "weathers", force: :cascade do |t|
-    t.string   "woeid"
+    t.string   "city"
+    t.string   "country"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
   end
 
 end
