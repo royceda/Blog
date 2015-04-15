@@ -18863,3 +18863,826 @@ ActionController::RoutingError (No route matches [GET] "/stylesheets/public/boot
   Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
   Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (47.4ms)
+
+
+Started GET "/stylesheets/public/bootstrap-3.3.2/favicon.ico" for 127.0.0.1 at 2015-04-16 01:32:30 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/public/bootstrap-3.3.2/favicon.ico"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (25.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (25.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (16.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (159.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (27.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (58.4ms)
+
+
+Started GET "/weathers" for 127.0.0.1 at 2015-04-16 01:32:35 +0200
+Processing by WeathersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mWeather Load (0.2ms)[0m  [1mSELECT "weathers".* FROM "weathers"[0m
+  Rendered weathers/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 511ms (Views: 380.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/stylesheets/bootstrap-3.3.2/dist/css/theme.css" for 127.0.0.1 at 2015-04-16 01:32:35 +0200
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/bootstrap-3.3.2/dist/css/theme.css"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (90.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (38.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (79.1ms)
+
+
+Started GET "/stylesheets/public/bootstrap-3.3.2/assets/js/ie-emulation-modes-warning.js" for 127.0.0.1 at 2015-04-16 01:32:36 +0200
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/public/bootstrap-3.3.2/assets/js/ie-emulation-modes-warning.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (66.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (28.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (58.5ms)
+
+
+Started GET "/weathers/1" for 127.0.0.1 at 2015-04-16 01:32:40 +0200
+Processing by WeathersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mWeather Load (0.5ms)[0m  [1mSELECT  "weathers".* FROM "weathers" WHERE "weathers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered weathers/show.html.erb within layouts/application (320.3ms)
+Completed 500 Internal Server Error in 335ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 2)):
+    12: 
+    13: 
+    14: 
+    15: <% query = @weather.lookup(@weather.city, @weather.country) %>
+    16: 
+    17: 
+    18: <p>  
+  app/models/weather.rb:69:in `lookup'
+  app/models/weather.rb:73:in `lookup'
+  app/views/weathers/show.html.erb:15:in `_app_views_weathers_show_html_erb__790067048__630125078'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (27.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (56.7ms)
+
+
+Started GET "/weathers/1" for 127.0.0.1 at 2015-04-16 01:33:59 +0200
+Processing by WeathersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mWeather Load (0.5ms)[0m  [1mSELECT  "weathers".* FROM "weathers" WHERE "weathers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered weathers/show.html.erb within layouts/application (736.2ms)
+Completed 500 Internal Server Error in 845ms
+
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    16: 
+    17: 
+    18: <p>  
+    19:   <%= @weather.Location(query).city %>,<%= @weather.Location(query).country %> 
+    20:   (woeid: <%= @weather.woeid %>)
+    21: </p>
+    22: <strong>  <%= @weather.Condition(query).date %><strong> 
+  app/models/Weather/API/location.rb:16:in `[]'
+  app/models/Weather/API/location.rb:16:in `initialize'
+  app/models/weather.rb:47:in `new'
+  app/models/weather.rb:47:in `Location'
+  app/views/weathers/show.html.erb:19:in `_app_views_weathers_show_html_erb__790067048__630784298'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (28.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (64.1ms)
+
+
+Started GET "/weathers/1" for 127.0.0.1 at 2015-04-16 01:34:44 +0200
+Processing by WeathersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mWeather Load (0.4ms)[0m  [1mSELECT  "weathers".* FROM "weathers" WHERE "weathers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered weathers/show.html.erb within layouts/application (760.2ms)
+Completed 500 Internal Server Error in 821ms
+
+ActionView::Template::Error (undefined method `woeid' for #<Weather:0xb48acc6c>):
+    17: 
+    18: <p>  
+    19:   <%= @weather.Location(query).city %>,<%= @weather.Location(query).country %> 
+    20:   (woeid: <%= @weather.woeid %>)
+    21: </p>
+    22: <strong>  <%= @weather.Condition(query).date %><strong> 
+    23: 
+  app/views/weathers/show.html.erb:20:in `_app_views_weathers_show_html_erb__790067048__630784298'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (45.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (24.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (49.6ms)
+
+
+Started GET "/weathers/1" for 127.0.0.1 at 2015-04-16 01:36:08 +0200
+Processing by WeathersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mWeather Load (0.2ms)[0m  [1mSELECT  "weathers".* FROM "weathers" WHERE "weathers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered weathers/show.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 30ms
+
+SyntaxError (/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:21: syntax error, unexpected '<'
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:26: unknown regexp options - war
+end pattern with unmatched parenthesis: /p>
+<strong>  '.freeze;@output_buffer.append=( @weather.Condition(query).date );@output_buffer.safe_append='<strong> 
+
+
+    <p>
+      '.freeze;@output_buffer.append=( image_tag "png/m
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/winds4.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:34: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/winds4.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/cloud377.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:36: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/cloud377.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/rain53.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/rain53.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:40: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/snowflae149.png" );@output_b...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:40: syntax error, unexpected tSTRING_BEG, expecting ')'
+...image_tag "png/snowflae149.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/snowing9.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:42: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/snowing9.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/foggy5.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:44: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/foggy5.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:46: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ffer.append=( image_tag "windy9.png" );@output_buffer.safe_a...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/cloud363.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/cloud363.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/cloudy19.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:50: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/cloudy19.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/sun79.png" );@output_buffer....
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:52: syntax error, unexpected tSTRING_BEG, expecting ')'
+...end=( image_tag "png/sun79.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:54: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/summer9.png" );@output_buffe...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:54: syntax error, unexpected tSTRING_BEG, expecting ')'
+...d=( image_tag "png/summer9.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:56: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/winds4.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:56: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/winds4.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:58: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/snowflake49.png" );@output_b...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:58: syntax error, unexpected tSTRING_BEG, expecting ')'
+...image_tag "png/snowflake49.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:74: syntax error, unexpected tIDENTIFIER, expecting ')'
+    <table class="table table-striped">
+                       ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:74: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+    <table class="table table-striped">
+                                      ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:93: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/winds4.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:93: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/winds4.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:95: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/cloud377.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:95: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/cloud377.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:97: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/rain53.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:97: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/rain53.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:99: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/snowflae149.png" );@output_b...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:99: syntax error, unexpected tSTRING_BEG, expecting ')'
+...image_tag "png/snowflae149.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/snowing9.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:101: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/snowing9.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:103: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/foggy5.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:103: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/foggy5.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:105: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ffer.append=( image_tag "windy9.png" );@output_buffer.safe_a...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:107: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/cloud363.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:107: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/cloud363.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:109: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/cloudy19.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:109: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/cloudy19.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:111: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/sun79.png" );@output_buffer....
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:111: syntax error, unexpected tSTRING_BEG, expecting ')'
+...end=( image_tag "png/sun79.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:113: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/summer9.png" );@output_buffe...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:113: syntax error, unexpected tSTRING_BEG, expecting ')'
+...d=( image_tag "png/summer9.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:115: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/winds4.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:115: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/winds4.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:117: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/snowflake49.png" );@output_b...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:117: syntax error, unexpected tSTRING_BEG, expecting ')'
+...image_tag "png/snowflake49.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:129: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/sunrise4.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:129: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/sunrise4.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:129: unterminated string meets end of file):
+  app/views/weathers/show.html.erb:21: syntax error, unexpected '<'
+  app/views/weathers/show.html.erb:26: unknown regexp options - war
+  app/views/weathers/show.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:34: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:36: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:40: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:40: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:42: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:44: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:46: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:50: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:52: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:54: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:54: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:56: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:56: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:58: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:58: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:74: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:74: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/weathers/show.html.erb:93: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:93: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:95: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:95: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:97: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:97: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:99: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:99: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:101: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:103: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:103: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:105: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:107: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:107: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:109: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:109: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:111: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:111: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:113: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:113: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:115: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:115: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:117: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:117: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:129: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:129: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:129: unterminated string meets end of file
+
+
+
+
+Started GET "/weathers/1" for 127.0.0.1 at 2015-04-16 01:36:29 +0200
+Processing by WeathersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mWeather Load (0.1ms)[0m  [1mSELECT  "weathers".* FROM "weathers" WHERE "weathers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered weathers/show.html.erb within layouts/application (39.9ms)
+Completed 500 Internal Server Error in 47ms
+
+SyntaxError (/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:21: syntax error, unexpected '<'
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:26: unknown regexp options - war
+end pattern with unmatched parenthesis: /p>
+<strong>  '.freeze;@output_buffer.append=( @weather.Condition(query).date );@output_buffer.safe_append='<strong> 
+
+
+    <p>
+      '.freeze;@output_buffer.append=( image_tag "png/m
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/winds4.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:34: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/winds4.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/cloud377.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:36: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/cloud377.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/rain53.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/rain53.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:40: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/snowflae149.png" );@output_b...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:40: syntax error, unexpected tSTRING_BEG, expecting ')'
+...image_tag "png/snowflae149.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/snowing9.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:42: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/snowing9.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/foggy5.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:44: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/foggy5.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:46: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ffer.append=( image_tag "windy9.png" );@output_buffer.safe_a...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/cloud363.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/cloud363.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/cloudy19.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:50: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/cloudy19.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/sun79.png" );@output_buffer....
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:52: syntax error, unexpected tSTRING_BEG, expecting ')'
+...end=( image_tag "png/sun79.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:54: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/summer9.png" );@output_buffe...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:54: syntax error, unexpected tSTRING_BEG, expecting ')'
+...d=( image_tag "png/summer9.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:56: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/winds4.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:56: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/winds4.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:58: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/snowflake49.png" );@output_b...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:58: syntax error, unexpected tSTRING_BEG, expecting ')'
+...image_tag "png/snowflake49.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:74: syntax error, unexpected tIDENTIFIER, expecting ')'
+    <table class="table table-striped">
+                       ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:74: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+    <table class="table table-striped">
+                                      ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:93: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/winds4.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:93: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/winds4.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:95: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/cloud377.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:95: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/cloud377.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:97: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/rain53.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:97: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/rain53.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:99: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/snowflae149.png" );@output_b...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:99: syntax error, unexpected tSTRING_BEG, expecting ')'
+...image_tag "png/snowflae149.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/snowing9.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:101: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/snowing9.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:103: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/foggy5.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:103: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/foggy5.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:105: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ffer.append=( image_tag "windy9.png" );@output_buffer.safe_a...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:107: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/cloud363.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:107: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/cloud363.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:109: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/cloudy19.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:109: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/cloudy19.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:111: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/sun79.png" );@output_buffer....
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:111: syntax error, unexpected tSTRING_BEG, expecting ')'
+...end=( image_tag "png/sun79.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:113: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/summer9.png" );@output_buffe...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:113: syntax error, unexpected tSTRING_BEG, expecting ')'
+...d=( image_tag "png/summer9.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:115: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/winds4.png" );@output_buffer...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:115: syntax error, unexpected tSTRING_BEG, expecting ')'
+...nd=( image_tag "png/winds4.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:117: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/snowflake49.png" );@output_b...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:117: syntax error, unexpected tSTRING_BEG, expecting ')'
+...image_tag "png/snowflake49.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:129: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( image_tag "png/sunrise4.png" );@output_buff...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:129: syntax error, unexpected tSTRING_BEG, expecting ')'
+...=( image_tag "png/sunrise4.png" );@output_buffer.safe_append...
+...                               ^
+/home/da/Work/Blog/trunk/Da/app/views/weathers/show.html.erb:129: unterminated string meets end of file):
+  app/views/weathers/show.html.erb:21: syntax error, unexpected '<'
+  app/views/weathers/show.html.erb:26: unknown regexp options - war
+  app/views/weathers/show.html.erb:34: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:34: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:36: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:36: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:40: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:40: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:42: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:44: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:44: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:46: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:50: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:52: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:54: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:54: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:56: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:56: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:58: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:58: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:74: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:74: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/views/weathers/show.html.erb:93: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:93: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:95: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:95: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:97: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:97: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:99: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:99: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:101: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:101: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:103: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:103: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:105: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:107: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:107: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:109: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:109: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:111: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:111: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:113: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:113: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:115: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:115: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:117: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:117: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:129: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/views/weathers/show.html.erb:129: syntax error, unexpected tSTRING_BEG, expecting ')'
+  app/views/weathers/show.html.erb:129: unterminated string meets end of file
+
+
+
+
+Started GET "/weathers/1" for 127.0.0.1 at 2015-04-16 01:36:48 +0200
+Processing by WeathersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mWeather Load (0.3ms)[0m  [1mSELECT  "weathers".* FROM "weathers" WHERE "weathers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered weathers/show.html.erb within layouts/application (1019.8ms)
+Completed 200 OK in 1216ms (Views: 1175.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/stylesheets/bootstrap-3.3.2/dist/css/theme.css" for 127.0.0.1 at 2015-04-16 01:36:49 +0200
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/bootstrap-3.3.2/dist/css/theme.css"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (26.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (22.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (25.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (481.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (3.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (137.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (301.6ms)
+
+
+Started GET "/stylesheets/public/bootstrap-3.3.2/assets/js/ie-emulation-modes-warning.js" for 127.0.0.1 at 2015-04-16 01:36:50 +0200
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/public/bootstrap-3.3.2/assets/js/ie-emulation-modes-warning.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (29.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (10.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (424.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (2.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (152.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (2.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (346.1ms)

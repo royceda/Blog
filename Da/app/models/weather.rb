@@ -66,12 +66,12 @@ class Weather < ActiveRecord::Base
     doc
   end
 
-  def lookup(city, country)
+  def lookup1(city, country)
     url = ROOT+"?q=select%20*%20from%20geo.places%20where%20text%3D'#{city}%20#{country}'&format=json"
     doc = get_response url
     woeid = doc[:results][:place][0][:woeid].to_s
-    lookup(woeid)
-    woeid
+    query = lookup(woeid)
+    query
   end
   
   private
