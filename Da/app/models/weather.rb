@@ -38,47 +38,44 @@ class Weather < ActiveRecord::Base
   end
 
   def lookup(woeid, unit = Units::CELSIUS)
+    begin
     acceptable_units = [Units::CELSIUS, Units::FAHRENHEIT]
     unit = Units::CELSIUS unless acceptable_units.include?(unit)
     url = ROOT + "?q=select%20*%20from%20weather.forecast%20"
     url += "where%20woeid%3D#{woeid}%20and%20u%3D'#{unit}'&format=json"
 
    # url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%3D580778%20and%20u%3D%27c%27&format=json"
+
     doc = get_response url
     puts url 
     puts "woeid #{woeid} "
-    doc
+    doc     
+    rescue => e
+      raise "Failed to get weather with [url=#{url}, e=#{e}]."
+    end
   end
 
-  def test city, country
-    if lookup1 city, country
-      true
-    else
-      false
-    end    
-  end
-
-
-  def lookup1(city, country)
+  def seek(city, country)
     begin 
       url = ROOT+"?q=select%20*%20from%20geo.places%20where%20text%3D'#{city}%20#{country}'&format=json"
-      #puts url
       doc = get_response url
       puts doc
       puts "\n"
       
-      # if puts[:count].to_i == 1
-      #   puts doc[:results][:place][:woeid]
-      #else 
-      puts doc[:results][:place]
+      if doc[:count].to_i == 1
+        for i in 1..doc[:count].to_i
+          puts 'aaa'
+        end
+        puts doc[:results][:place][:woeid]
+      else 
+        puts doc[:results][:place]
+      end
       
-      #end
-      woeid = doc[:results][:place][:woeid].to_s
-      query = lookup(woeid)
-      query
+      #woeid = doc[:results][:place][:woeid].to_s
+      #query = lookup(woeid)
+      #query
     rescue => e
       raise "Failed to get weather with [url=#{url}, e=#{e}]."
-      false
     end
   end
     
