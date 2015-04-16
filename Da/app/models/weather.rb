@@ -68,8 +68,19 @@ class Weather < ActiveRecord::Base
 
   def lookup1(city, country)
     url = ROOT+"?q=select%20*%20from%20geo.places%20where%20text%3D'#{city}%20#{country}'&format=json"
+    #puts url
     doc = get_response url
-    woeid = doc[:results][:place][0][:woeid].to_s
+    puts doc
+    puts "\n"
+
+   # if puts[:count].to_i == 1
+     #   puts doc[:results][:place][:woeid]
+    #else 
+      puts doc[:results][:place]
+    
+    #end
+    woeid = doc[:results][:place][:woeid].to_s
+    
     query = lookup(woeid)
     query
   end
@@ -79,10 +90,11 @@ class Weather < ActiveRecord::Base
     begin
       response = Net::HTTP.get_response(URI.parse url).body.to_s
       puts response
+      response = Map.new(JSON.parse(response))[:query]#[:results][:channel]
     rescue => e
       raise "Failed to get weather [url=#{url}, e=#{e}]."
     end
-    response = Map.new(JSON.parse(response))[:query]#[:results][:channel]
+   
     # response = "ok"
     #     if response.nil? or response.title.match(/error/i)
     #       raise "Failed to get weather [url=#{url}]."

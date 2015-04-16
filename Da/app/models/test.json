@@ -1,0 +1,35 @@
+{"query"
+ :{"count":1,"created":"2015-04-16T00:11:13Z","lang":"en-US","results"
+   :{"place"
+     :{"lang":"en-US","uri":"http://where.yahooapis.com/v1/place/608105","woeid":"608105","placeTypeName"
+       :{"code":"7","content":"Town"}
+       ,"name":"Lille","country"
+       :{"code":"FR","type":"Country","woeid":"23424819","content":"France"}
+       ,"admin1"
+       :{"code":"",
+	 "type":"Region",
+	 "woeid":"7153324",
+	 "content":"Nord-Pas-de-Calais"},
+       "admin2":{"code":"FR-59",
+		 "type":"Department",
+		 "woeid":"12597175",
+		 "content":"Nord"},
+       "admin3":{"code":"",
+		 "type":"Local Administrative Area",
+		 "woeid":"12661407","content":"Lille"},
+       "locality1":{"type":"Town",
+		    "woeid":"608105",
+		    "content":"Lille"},
+       "locality2":null,
+       "postal":null,
+       "centroid":{"latitude":"50.628262",
+		   "longitude":"3.060150"},
+       "boundingBox":{"southWest":{"latitude":"50.600780",
+				   "longitude":"3.016790"},
+		      "northEast":{"latitude":"50.657028",
+				   "longitude":"3.103990"}},
+       "areaRank":"3",
+       "popRank":"11",
+       "timezone":{"type":"Time Zone",
+		   "woeid":"28350911",
+		   "content":"Europe/Paris"}}}}}
