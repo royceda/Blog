@@ -69,6 +69,6 @@ class WeathersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def weather_params
-      params.require(:weather).permit(:city, :country)
+      params.require(:weather).permit(:woeid)
     end
 end

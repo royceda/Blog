@@ -1,18 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>City:</strong>
-  <%= @weather.city %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @weather.country %>
+  <strong>Woeid:</strong>
+  <%= @weather.woeid %>
 </p>
 
 
 
-<% query = @weather.lookup1(@weather.city, @weather.country) %>
+
+<% query = @weather.lookup(@weather.woeid) %>
+
 
 
 <p>  
@@ -20,7 +17,6 @@
 
 </p>
 <strong>  <%= @weather.Condition(query).date %><strong> 
-
 
     <p>
       <%= image_tag "png/warm.png" %>

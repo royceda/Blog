@@ -12,8 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :woeid %><br>
-    <%= f.number_field :woeid %>
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
   </div>
   <div class="actions">
     <%= f.submit %>

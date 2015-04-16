@@ -18,7 +18,7 @@ class WeathersControllerTest < ActionController::TestCase
 
   test "should create weather" do
     assert_difference('Weather.count') do
-      post :create, weather: { city: @weather.city, country: @weather.country }
+      post :create, weather: { woeid: @weather.woeid }
     end
 
     assert_redirected_to weather_path(assigns(:weather))
@@ -35,7 +35,7 @@ class WeathersControllerTest < ActionController::TestCase
   end
 
   test "should update weather" do
-    patch :update, id: @weather, weather: { city: @weather.city, country: @weather.country }
+    patch :update, id: @weather, weather: { woeid: @weather.woeid }
     assert_redirected_to weather_path(assigns(:weather))
   end
 

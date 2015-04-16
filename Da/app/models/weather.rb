@@ -17,22 +17,6 @@ class Weather < ActiveRecord::Base
  
   ROOT = "http://query.yahooapis.com/v1/public/yql"
 
-  def meteo id
-    query = lookup(id, Units::CELSIUS)
-    a  = Atmosphere.new query;
-    l  = Location.new   query;
-    as = Astronomy.new  query
-    c  = Condition.new  query
-
-    response = "Pour la ville de #{l.city} ( #{l.country}, #{l.region})\n Atmosphere:\n humidity: #{a.humidity} % \n pressure: #{a.pressure} \n rising: #{a.rising} \n visibility: #{a.visibility} km \n Astronomy:\n Sunrise: #{as.sunrise} \n Sunset: #{as.sunset}\n Condition:\n code: #{c.code} \n date: #{c.date} \n temp: #{c.temp} °C \n text: #{c.text}\n"
-
-    for i in 0..4
-      f = Weather::Forecast.new query, i;
-      puts "Forecast:\n code: #{f.code} \n date: #{f.date} \n day: #{f.day} \n high: #{f.high} \n low: #{f.low} \n text: #{f.text} \n "
-    end
-   response
-  end
-
   def Forecast query, i
     f = Weather::Forecast.new query, i;
     f
@@ -66,25 +50,38 @@ class Weather < ActiveRecord::Base
     doc
   end
 
-  def lookup1(city, country)
-    url = ROOT+"?q=select%20*%20from%20geo.places%20where%20text%3D'#{city}%20#{country}'&format=json"
-    #puts url
-    doc = get_response url
-    puts doc
-    puts "\n"
-
-   # if puts[:count].to_i == 1
-     #   puts doc[:results][:place][:woeid]
-    #else 
-      puts doc[:results][:place]
-    
-    #end
-    woeid = doc[:results][:place][:woeid].to_s
-    
-    query = lookup(woeid)
-    query
+  def test city, country
+    if lookup1 city, country
+      true
+    else
+      false
+    end    
   end
-  
+
+
+  def lookup1(city, country)
+    begin 
+      url = ROOT+"?q=select%20*%20from%20geo.places%20where%20text%3D'#{city}%20#{country}'&format=json"
+      #puts url
+      doc = get_response url
+      puts doc
+      puts "\n"
+      
+      # if puts[:count].to_i == 1
+      #   puts doc[:results][:place][:woeid]
+      #else 
+      puts doc[:results][:place]
+      
+      #end
+      woeid = doc[:results][:place][:woeid].to_s
+      query = lookup(woeid)
+      query
+    rescue => e
+      raise "Failed to get weather with [url=#{url}, e=#{e}]."
+      false
+    end
+  end
+    
   private
   def get_response url
     begin
@@ -94,13 +91,13 @@ class Weather < ActiveRecord::Base
     rescue => e
       raise "Failed to get weather [url=#{url}, e=#{e}]."
     end
-   
+    response
     # response = "ok"
     #     if response.nil? or response.title.match(/error/i)
     #       raise "Failed to get weather [url=#{url}]."
     #   end
 
-    response
+    
   end
 end
 

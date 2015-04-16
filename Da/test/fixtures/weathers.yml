@@ -1,9 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  city: MyString
-  country: MyString
+  woeid: 1
 
 two:
-  city: MyString
-  country: MyString
+  woeid: 1
