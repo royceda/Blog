@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20150416222135) do
     t.string   "user_name"
     t.text     "text"
     t.integer  "user_id"
+    t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "post_id"
   end
 
   create_table "posts", force: :cascade do |t|
