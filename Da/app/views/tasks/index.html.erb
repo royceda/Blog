@@ -26,13 +26,6 @@
   </tbody>
 </table>
 
-
-<%= form_for [@task, @task.build] do |f| %>
-  <p><%= f.text_area :text, :size => '40x10' %></p>
-  <p><%= f.submit "new task" %><p>
-<% end %>
-
-
 <br>
 <button type="button" class="btn btn-lg btn-info"></button>
 <%= link_to 'New Task', new_task_path %>
