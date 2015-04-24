@@ -33,6 +33,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        puts "okkkkkkk"
         format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
