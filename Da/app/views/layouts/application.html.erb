@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag '', :media => 'custom' %>
     <%= stylesheet_link_tag 'bootstrap-3.3.2/dist/css/bootstrap.min.css', :media => 'screen' %>
     <%= stylesheet_link_tag 'bootstrap-3.3.2/dist/css/bootstrap-theme.min.css', :media => 'screen' %>
+<%= stylesheet_link_tag 'bootstrap-3.3.2/dist/css/simple-sidebar.css', :media => 'screen' %>
     <%= stylesheet_link_tag 'bootstrap-3.3.2/dist/css/theme.css', :media => 'screen' %>
     
     <meta charset="utf-8">
@@ -31,16 +32,15 @@
   <body role="document">
 
 
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-
-
-
-
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    
+  
+    
 
 
 
@@ -109,6 +109,10 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
+
+
+
     <center><%= image_tag("logo.jpg", :alt => "Blog") %>  
 	<section class="jumbotron">
 
@@ -120,10 +124,14 @@
 	  <% end %>
 
 
-	  <%= yield %>
-	  
-	</section>
-</center>
+
+
+	
+	
+		  <%= yield %>
+		  
+		</section>
+			</center>
 
 </body>
 

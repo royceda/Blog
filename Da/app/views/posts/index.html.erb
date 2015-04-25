@@ -2,70 +2,32 @@
 
 <h1>Listing Posts</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Autor</th>
-      <th>Text</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.title %></td>
-      <td><%= post.autor %></td>
-      <td><%= post.text %></td>
-      <td><%= time_ago_in_words post.created_at %> ago</td>
-      <td><%= link_to 'Show', post %></td>
-      
-      <% if post.user_id == current_user.id %>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
 <%= link_to 'New Post', new_post_path %>
 
 <% @posts.each do |post| %>
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= link_to post.title, post %></h3>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= link_to post.title, post %></h3>
+    </div>
+    <div class="panel-body">
+      <blockquote>
+	<p><%= post.text %></p>
+	<small>By <%= post.autor %></small>
+	<small><%= time_ago_in_words post.created_at %> ago</small>
+      </blockquote>
+      <p>
+	<% if post.user_id == current_user.id %>
+	  <%= link_to 'Edit', edit_post_path(post) %> 
+	  |
+	  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> 
+	<% end %>
+      </p>
+    </div>
   </div>
-  <div class="panel-body">
-    <blockquote>
-      <p><%= post.text %></p>
-      <small>By <%= post.autor %></small>
-      <small><%= time_ago_in_words post.created_at %> ago</small>
-    </blockquote>
-    <h3>Comments</h3>
-    
-    <% post.comments.each do |comment| %>
-      <% if comment.post_id = @post.id %>
-	<%= comment.text %>
-      <% end %>
-    <% end %>
-    
-    
-    <p><%= link_to 'New Comment', '#' %></p>
-    
-    
-    <p>
-      <% if post.user_id == current_user.id %>
-      <%= link_to 'Edit', edit_post_path(post) %> 
-      |
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %> 
-      <% end %>
-    </p>
-  </div>
-</div>
 
 <% end %>
 

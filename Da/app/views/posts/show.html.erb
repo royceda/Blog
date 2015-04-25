@@ -1,39 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
 
-<p>
-  <strong>Autor:</strong>
-  <%= @post.autor %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @post.text %>
-</p>
-
-
-<h3>Comments</h3>
-
-<% @post.comments.each do |comment| %>
-  <% if comment.post_id = @post.id %>
-    <p><%= comment.text %></p>
-  <% end %>
-<% end %>
-
-
-<%= form_for [@post, @post.comments.build] do |f|%>
-  <p><%= f.text_area :text, :size => '30x2' %> </p>
-  <p><%= f.submit "Post Comment" %></p>
-<% end %>
-
+      <h2><%= @post.title %></h2>
+      <p><blockquote>by <%= @post.autor %></blockquote>
+    </p>
+    <p><%= @post.text %></p>
+  </div>
+  <div class="panel-body">
+    <h2>Comments</h2>
+    <% @post.comments.each do |comment| %>
+      <% if comment.post_id = @post.id %>
+	<p><%= comment.text %></p>
+	<blockquote>
+	  <% @user = User.find(1) %>
+	  <%= comment.user_id %>
+	  <small>By <%= @user.email %></small>
+	</blockquote>
+      <% end %>
+    <% end %>
+    
+    <%= form_for [@post, @post.comments.build] do |f| %>
+      <p><%= f.text_area :text, :size => '30x2' %> </p>
+      <p><%= f.submit "Post Comment" %></p>
+    <% end %>
+  </div>
+</div>
 
 <% if @post.user_id == current_user.id %>
   <p><%= link_to 'Edit', edit_post_path(@post) %></p>
-  <p><%= link_to 'Delete', post, :method => :destroy, data: { confirm: 'Are you sure?' } %></p>
+  
+  <p><%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <% end %>
 
 
