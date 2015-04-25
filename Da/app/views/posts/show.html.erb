@@ -20,7 +20,7 @@
 
 <% @post.comments.each do |comment| %>
   <% if comment.post_id = @post.id %>
-    <%= comment.text %>
+    <p><%= comment.text %></p>
   <% end %>
 <% end %>
 
