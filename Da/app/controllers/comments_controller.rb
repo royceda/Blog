@@ -24,38 +24,36 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-
-    @post = Post.find(params[:post_id])
+    @post    = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
-    #@comment.user_id = current_user.id 
+    @comment.user_id = current_user.id 
+    @comment.post_id = @post.id
     @comment.save
     redirect_to @post
     
-
-#    @post = Post.find(params[:post_id])
- #   @comment = Comment.create(comment_params)
- 
-   # if @comment.save
-    #  redirect_to @post
-   # else
-     # flash.now[:danger] = "error"
-    #end
+    # @post = Post.find(params[:post_id])
+    # @comment = Comment.create(comment_params)
     
-
-    #    @comment = Comment.new(comment_params)
-    #   @comment.user_id = current_user.id
+    # if @comment.save
+    # redirect_to @post
+    # else
+    # flash.now[:danger] = "error"
+    # end
+    
+    #  @comment = Comment.new(comment_params)
+    #  @comment.user_id = current_user.id
     #  @post = post.find(params[:id])
     #@comment.post_id = current_post.id
 
-   # respond_to do |format|
+    # respond_to do |format|
     #  if @comment.save
-     #   format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-      #  format.json { render :show, status: :created, location: @comment }
-     # else
-      #  format.html { render :new }
-       # format.json { render json: @comment.errors, status: :unprocessable_entity }
-      #end
-   # end
+    #   format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+    #  format.json { render :show, status: :created, location: @comment }
+    # else
+    #  format.html { render :new }
+    # format.json { render json: @comment.errors, status: :unprocessable_entity }
+    # end
+    # end
   end
 
   # PATCH/PUT /comments/1
